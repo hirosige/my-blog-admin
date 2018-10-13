@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from "@angular/forms"; // 追加
+import { FormsModule } from '@angular/forms'; // 追加
 
-import { ChatDatePipe } from "./pipe/chat-date.pipe"; // 追加
+import { ChatDatePipe } from './pipe/chat-date.pipe'; // 追加
 
 @NgModule({
   imports: [

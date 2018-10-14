@@ -2,7 +2,7 @@
   max-width: 960px;
   height: 100%;
   margin: 0 auto;
-  padding: 10px 0;
+  padding: 60px 0;
   background-color: #fff;
   border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
@@ -12,6 +12,7 @@
 
 .page section{
   margin: 0 10px 30px;
+  border-radius: 0;
 }
 
 .page .page-footer{
@@ -35,6 +36,7 @@
   border-radius: 10px;
   font-size: 15px;
   word-break: break-all;
+  border-radius: 0;
 }
 
 .page .card .media-body h4.media-heading {

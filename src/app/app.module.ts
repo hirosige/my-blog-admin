@@ -10,8 +10,8 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { CoreModule } from './modules/core/core.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
-import { ChatComponent } from './chat/chat.component';
-import { PageNotFoundComponent } from './error/page-not-found/page-not-found.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { PageNotFoundComponent } from './components/error/page-not-found/page-not-found.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { LoginGuard } from './guards/login/login.guard';
 

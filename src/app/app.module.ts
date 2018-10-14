@@ -16,7 +16,7 @@ import { AuthGuard } from './modules/core/guard/auth.guard';
 import { LoginGuard } from './modules/core/guard/login.guard';
 
 const appRoutes: Routes = [
-  { path: 'account', loadChildren: './account/account.module#AccountModule', canActivate: [LoginGuard] },
+  { path: 'account', loadChildren: './modules/account/account.module#AccountModule', canActivate: [LoginGuard] },
   { path: '', component: ChatComponent, canActivate: [AuthGuard] },
   { path: '**', component: PageNotFoundComponent }
 ];

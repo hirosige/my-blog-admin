@@ -5,15 +5,14 @@ import {
   RouterStateSnapshot,
   Router
 } from '@angular/router';
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SessionService } from '../../../services/session/session.service';
+import { SessionService } from '../../services/session/session.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class LoginGuard implements CanActivate {
 
   constructor(
     private session: SessionService,
@@ -26,11 +25,12 @@ export class AuthGuard implements CanActivate {
     return this.session
       .checkLoginState()
       .pipe(
-        map(session => {
-          if (!session.login) {
-            this.router.navigate(['/account/login']);
+        map((session) => {
+          if (session.login) {
+            this.router.navigate(['/']);
           }
-          return session.login;
+
+          return !session.login;
         })
       );
   }

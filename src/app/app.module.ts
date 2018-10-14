@@ -12,8 +12,8 @@ import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { PageNotFoundComponent } from './error/page-not-found/page-not-found.component';
-import { AuthGuard } from './modules/core/guard/auth.guard';
-import { LoginGuard } from './modules/core/guard/login.guard';
+import { AuthGuard } from './guards/auth/auth.guard';
+import { LoginGuard } from './guards/login/login.guard';
 
 const appRoutes: Routes = [
   { path: 'account', loadChildren: './modules/account/account.module#AccountModule', canActivate: [LoginGuard] },

@@ -7,13 +7,13 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
 
-import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './modules/core/core.module';
+import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
 import { ChatComponent } from './chat/chat.component';
 import { PageNotFoundComponent } from './error/page-not-found/page-not-found.component';
-import { AuthGuard } from './core/guard/auth.guard';
-import { LoginGuard } from './core/guard/login.guard';
+import { AuthGuard } from './modules/core/guard/auth.guard';
+import { LoginGuard } from './modules/core/guard/login.guard';
 
 const appRoutes: Routes = [
   { path: 'account', loadChildren: './account/account.module#AccountModule', canActivate: [LoginGuard] },

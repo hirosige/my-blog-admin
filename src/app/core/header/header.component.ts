@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../service/session.service';
-import { Session } from '../../class/chat';
+import { Session } from '../../models/session';
 
 @Component({
   selector: 'app-header',
@@ -23,5 +23,4 @@ export class HeaderComponent implements OnInit {
   logout(): void {
     this.sessionService.logout();
   }
-
 }

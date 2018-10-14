@@ -1,4 +1,3 @@
-import { Password } from './../../class/chat';
 import { Injectable } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
 import { map, switchMap, take } from 'rxjs/operators';
@@ -7,7 +6,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import { Session, User } from '../../class/chat';
+import { Password } from './../../models/password';
+import { User } from '../../class/chat';
+import { Session } from '../../models/session';
 
 @Injectable({
   providedIn: 'root'

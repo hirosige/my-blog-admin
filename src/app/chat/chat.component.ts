@@ -16,7 +16,6 @@ export class ChatComponent implements OnInit {
   public comments: Observable<Comment[]>;
   public current_user: User;
 
-  // DI（依存性注入する機能を指定）
   constructor(
     private db: AngularFirestore,
     private session: SessionService
@@ -28,24 +27,23 @@ export class ChatComponent implements OnInit {
       });
   }
 
-  ngOnInit() { // コンストラクタの内容を移す
-    this.comments = this.db // thisを追加
+  ngOnInit() {
+    this.comments = this.db
       .collection<Comment>('comments', ref => {
         return ref.orderBy('date', 'asc');
       })
       .snapshotChanges()
       .pipe(
         map(actions => actions.map(action => {
-          // 日付をセットしたコメントを返す
           const data = action.payload.doc.data() as Comment;
           const key = action.payload.doc.id;
           const comment_data = new Comment(data.user, data.content);
+
           comment_data.setData(data.date, key);
           return comment_data;
         })));
   }
 
-  // 新しいコメントを追加
   addComment(e: Event, comment: string) {
     e.preventDefault();
     if (comment) {
@@ -56,12 +54,10 @@ export class ChatComponent implements OnInit {
     }
   }
 
-  // 編集フィールドの切り替え
   toggleEditComment(comment: Comment) {
     comment.edit_flag = (!comment.edit_flag);
   }
 
-  // コメントを更新する
   saveEditComment(comment: Comment) {
     this.db
       .collection('comments')
@@ -76,12 +72,10 @@ export class ChatComponent implements OnInit {
       });
   }
 
-  // コメントをリセットする
   resetEditComment(comment: Comment) {
     comment.content = '';
   }
 
-  // コメントを削除する
   deleteComment(key: string) {
     this.db
       .collection('comments')
@@ -91,5 +85,4 @@ export class ChatComponent implements OnInit {
         alert('コメントを削除しました');
       });
   }
-
 }

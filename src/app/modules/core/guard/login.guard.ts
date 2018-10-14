@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { SessionService } from '../service/session.service';
+import { SessionService } from '../../../services/session/session.service';
 
 @Injectable({
   providedIn: 'root'

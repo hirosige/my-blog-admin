@@ -6,9 +6,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import { AngularFirestore } from '@angular/fire/firestore';
 
-import { Password } from '../../../models/password';
-import { User } from '../../../models/user';
-import { Session } from '../../../models/session';
+import { Password } from '../../models/password';
+import { User } from '../../models/user';
+import { Session } from '../../models/session';
 
 @Injectable({
   providedIn: 'root'

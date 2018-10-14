@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { SessionService } from '../modules/core/service/session.service';
+import { SessionService } from '../services/session/session.service';
 
 import { Comment } from '../models/comment';
 import { User } from '../models/user';

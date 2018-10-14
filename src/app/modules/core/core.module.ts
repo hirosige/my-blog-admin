@@ -1,6 +1,6 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core'; // 追加
+import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header/header.component'; // 追加
+import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports: [ // 追加
+  exports: [
     HeaderComponent,
   ],
   declarations: [
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
 })
 export class CoreModule {
 
-  constructor (@Optional() @SkipSelf() parentModule: CoreModule) { // 追加
+  constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {
       throw new Error(
         'CoreModule is already loaded. Import it in the AppModule only');

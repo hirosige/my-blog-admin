@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Comment, User } from '../class/chat';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { SessionService } from '../core/service/session.service';
+import { SessionService } from '../modules/core/service/session.service';
+
+import { Comment } from '../models/comment';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-chat',

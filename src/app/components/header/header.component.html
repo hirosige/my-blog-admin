@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Hiro Chat</span>
+    <span class="example-spacer"></span>
+    <span class="navbar-text" *ngIf="!login">
+      <a routerLink="/account/login" class="example-icon" mat-button>Login</a>
+    </span>
+    <span class="navbar-text" *ngIf="login">
+      <a routerLink="/account/login" (click)="logout()" class="example-icon" mat-button>Logout</a>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>

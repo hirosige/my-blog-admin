@@ -8,5 +8,10 @@ export const environment = {
     projectId: '',
     storageBucket: '',
     messagingSenderId: ''
+  },
+
+  algolia: {
+    appId: '',
+    apiKey: ''
   }
 };

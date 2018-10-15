@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
-import { SessionService } from '../services/session/session.service';
+import { SessionService } from '../../services/session/session.service';
 
-import { Comment } from '../models/comment';
-import { User } from '../models/user';
+import { Comment } from '../../models/comment';
+import { User } from '../../models/user';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-chat',
@@ -13,6 +14,12 @@ import { User } from '../models/user';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent implements OnInit {
+  public searchConfig = {
+    ...environment.algolia,
+    indexName: 'posts'
+  };
+
+  public showResults = false;
 
   public content = '';
   public comments: Observable<Comment[]>;

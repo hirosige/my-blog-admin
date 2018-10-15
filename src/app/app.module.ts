@@ -6,6 +6,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { NgAisModule } from 'angular-instantsearch';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoreModule } from './modules/core/core.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -14,6 +16,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { PageNotFoundComponent } from './components/error/page-not-found/page-not-found.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { LoginGuard } from './guards/login/login.guard';
+import { MaterialModule } from './modules/material/material.module';
 
 const appRoutes: Routes = [
   { path: 'account', loadChildren: './modules/account/account.module#AccountModule', canActivate: [LoginGuard] },
@@ -36,6 +39,9 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
+    NgAisModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
